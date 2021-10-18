@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>HearX signup</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="wrapper-container">
+            <div class="form-container">
+                <div class="logo-div">
+                    <img class="logo" src="images/logo-hearx.png" alt="logo">
+                </div>
+                <h1>Sign Up</h1>
+                <hr>
+                <form class="form form-hide" method="POST" id="form-id" onsubmit="signUp(event);">
+                    <!-- input labels and text fields -->
+
+                    <!-- First name input field  -->
+                    <label for="firstName">First Name:</label><br>
+                    <input class="text-input" type="text" id="firstName" name="firstName" value=""
+                        oninvalid="this.setCustomValidity('First Name cannot be empty.')"
+                        onchange="this.setCustomValidity('')" type="text" required><br>
+
+                        <!-- Last name input field  -->
+                    <label for="lastName">Last Name:</label><br>
+                    <input class="text-input" type="text" id="lastName" name="lastName" value=""
+                        oninvalid="this.setCustomValidity('Last Name cannot be empty.')"
+                        onchange="this.setCustomValidity('')" required><br>
+
+                        <!-- contact number input field  -->
+                    <label for="contactNumber">Contact Number:</label><br>
+                    <input class="text-input" type="tel" id="contactNumber" name="contactNumber" value=""
+                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                        oninvalid="this.setCustomValidity('Contact number cannot be less or more than 10 digits.')"
+                        onchange="this.setCustomValidity('')" required><br>
+
+                        <!-- Email address input field  -->
+                    <label for="email">Email:</label><br>
+                    <input class="text-input" type="email" id="email" name="email" value="" required><br>
+
+                    <!-- Gender selection -->
+                    <p>Gender:</p>
+                    <input type="radio" name="gender" id="female" required>
+                    <label class="gender" for="female">Female</label>
+                    <input type="radio" name="gender" id="male" required>
+                    <label class="gender" for="male">Male</label>
+                    <input type="radio" name="gender" id="other" required>
+                    <label class="gender" for="other">Rather not say</label>
+                    <br><br>
+
+                    <!-- Consent checkbox -->
+                    <input type="checkbox" name="" id="consent" required>
+                    <label class="consent" for="consent">I understand I will be contacted by HearX group.
+                    </label><br><br>
+
+                    <!-- submission button -->
+                    <button class="btn" id="open-popup-btn" type="submit" form="form-id">
+                        <i class="loading-icon fa fa-spinner fa-spin hide"></i>
+                        <span class="btn-txt">Submit</span>
+                    </button>
+
+                    <!-- popup -->
+
+                    <div class="popup center">
+                        <div class="icon">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <div class="title">
+                            Thank You!!
+                        </div>
+                        <div class="description">
+                            You have succesfully signed up with HearX..
+                        </div>
+                        <div class="dismiss-btn">
+                            <button id="dismiss-popup-btn">
+                                Done
+                            </button>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
